@@ -1,0 +1,254 @@
+/* ========================================
+   CSS RESET
+======================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ========================================
+   DESIGN VARIABLES
+======================================== */
+
+:root {
+  /* Colors */
+  --color-primary: #222222;
+  --color-secondary: #666666;
+  --color-background: #f7f5f0;
+  --color-surface: #f5f5f5;
+  --color-section: #e5e7dd;
+  --color-devide: #335544;
+
+  /* Layout */
+  --content-width: 1200px;
+  --page-padding: 24px;
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 48px;
+  --spacing-xl: 80px;
+}
+
+/* ========================================
+   GENERAL STYLES
+======================================== */
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: var(--color-primary);
+  background-color: var(--color-background);
+}
+
+.container {
+  width: min(100% - (var(--page-padding) * 2), var(--content-width));
+  margin-inline: auto;
+}
+
+/* ========================================
+   HEADER & FOOTER
+======================================== */
+
+.site-header {
+  display: flex;
+  justify-content: center;
+  padding: 24px auto 16px;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* ========================================
+ HERO
+======================================== */
+
+.hero {
+  max-width: 900px;
+  margin: 16px auto 32px;
+  padding-inline: var(--page-padding);
+  text-align: center;
+}
+
+.hero h1 {
+  margin-bottom: 32px;
+}
+
+.hero-description {
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/* ========================================
+ SERVICES
+======================================== */
+
+.services {
+  width: min(100% - (var(--page-padding) * 2), 800px);
+  margin: 0 auto 64px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 56px 32px;
+  list-style: none;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.service-icon {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 12px;
+}
+
+.service-separator {
+  width: 72px;
+  color: var(--color-devide);
+}
+
+.service-card h2 {
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.service-card p {
+  margin-top: 8px;
+}
+
+/* ========================================
+ CONTACT
+======================================== */
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 800px;
+  margin: 0 auto 48px;
+  padding: 48px 64px;
+  border-radius: 16px;
+  background-color: var(--color-section);
+}
+
+.contact-info {
+  padding-right: 48px;
+}
+
+.contact-name {
+  margin-bottom: 24px;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.contact-cta {
+  padding-left: 48px;
+  border-left: 2px solid var(--color-devide);
+}
+
+.contact-cta h2 {
+  margin-bottom: 16px;
+}
+
+/* ========================================
+ RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+  .logo {
+    width: 160px;
+  }
+
+  .hero {
+    margin-top: 24px;
+    margin-bottom: 40px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 16px;
+  }
+
+  .contact-info {
+    padding-right: 32px;
+  }
+
+  .contact-cta {
+    padding-left: 32px;
+  }
+
+  .contact-list li {
+    gap: 8px;
+  }
+}
